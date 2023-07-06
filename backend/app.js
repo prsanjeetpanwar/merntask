@@ -9,9 +9,12 @@ const taskRoutes = require("./routes/taskRoutes");
 const profileRoutes = require("./routes/profileRoutes");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000" // Replace with your allowed origin(s)
+}));
 
-const mongoUrl ='mongodb://localhost:27017/new'
+
+const mongoUrl ='mongodb://127.0.0.1:27017/new'
 mongoose.connect(mongoUrl, err => {
   if (err) throw err;
   console.log("Mongodb connected...");
