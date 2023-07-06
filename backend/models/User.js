@@ -19,11 +19,14 @@ const userSchema = new mongoose.Schema({
   joiningTime: {
     type: Date,
     default: Date.now
+  },
+  role: {
+    type: String,
+    default: "user"
   }
 }, {
   timestamps: true
 });
-
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
